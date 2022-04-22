@@ -6,7 +6,7 @@
       "eks_build_date":"",
       "cni_plugin_version": "v0.8.6",
       "binary_bucket_name": "amazon-eks",
-      "binary_bucket_region": "us-east-1",
+      "binary_bucket_region": "us-west-2",
       "hardening_flag": "false",
       "root_volume_size": "10",
       "data_volume_size": "50",
