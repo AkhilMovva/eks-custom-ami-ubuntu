@@ -36,8 +36,7 @@ install_awscliv2
 install_ssmagent
 
 # partition the disks
-# changed from /dev/nvme1n1
 systemctl stop rsyslog irqbalance polkit
-partition_disks /dev/xvda
+partition_disks /dev/nvme1n1
 
 reboot

@@ -41,7 +41,7 @@
           ],
           "most_recent":true
         },
-        "instance_type":"t2.micro",
+        "instance_type":"t3.xlarge",
         "ssh_username":"{{user `source_ami_ssh_user`}}",
         "ssh_pty":true,
         "subnet_id":"{{user `subnet_id`}}",
