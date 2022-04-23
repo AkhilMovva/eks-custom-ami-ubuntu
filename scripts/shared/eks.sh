@@ -136,6 +136,7 @@ systemctl daemon-reload && systemctl disable kubelet
 mkdir -p /etc/eks
 curl -sL -o /etc/eks/eni-max-pods.txt https://raw.githubusercontent.com/awslabs/amazon-eks-ami/master/files/eni-max-pods.txt
 curl -sL -o /etc/eks/bootstrap.sh https://raw.githubusercontent.com/awslabs/amazon-eks-ami/master/files/bootstrap.sh
+curl -sL -o /etc/eks/iptables-restore.service https://raw.githubusercontent.com/awslabs/amazon-eks-ami/master/files/iptables-restore.service
 chmod +x /etc/eks/bootstrap.sh
 
 ################################################################################
