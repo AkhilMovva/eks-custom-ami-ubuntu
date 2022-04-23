@@ -65,7 +65,7 @@ cat > ${TMP_LT_FILE} <<EOF
 {
     "ImageId":"${AMI_ID}",
     "InstanceType":"${INSTANCE_TYPE}",
-    "UserData":"$(cat $TMP_USER_DATA_FILE | base64)",
+    "UserData":"$(cat $TMP_USER_DATA_FILE | base64  -w 0)",
     "TagSpecifications":[
         {
             "ResourceType":"instance",

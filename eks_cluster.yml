@@ -1,12 +1,14 @@
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 metadata:
-  name: custom-amis
+  name: custom-ami
   region: us-east-1
   version: "1.22"
 
 managedNodeGroups:
-  - name: ng-ubuntu2004-1
+  - name: ng-1
+    ami: ami-0ab0c69d45a406232
+    instanceType: t3.xlarge
     minSize: 1
     desiredCapacity: 1
     maxSize: 1
@@ -16,22 +18,13 @@ managedNodeGroups:
         - arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy
         - arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy
         - arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly
-        - arn:aws:iam::aws:policy/service-role/AmazonEC2RoleforSSM
+        - arn:aws:iam::aws:policy/service-role/AmazonEC2RoleforSSM    
+    labels:
+      role: worker
+    tags:
+      k8s.io/cluster-autoscaler/enabled: "true"
+      k8s.io/cluster-autoscaler/custom-ami: "true"
     launchTemplate:
-      id: lt-0436ab6d653aec89e
-
-  # - name: ng-centos7-1
-  #   minSize: 1
-  #   desiredCapacity: 1
-  #   maxSize: 1
-  #   privateNetworking: true
-  #   iam:
-  #     attachPolicyARNs:
-  #       - arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy
-  #       - arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy
-  #       - arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly
-  #       - arn:aws:iam::aws:policy/service-role/AmazonEC2RoleforSSM
-  #   launchTemplate:
-  #     id: lt-0a883caf833b9c4db
-
+      id: lt-04e94a42d9edcb7a6
+ 
   
