@@ -4,8 +4,8 @@ SUBNET_ID := subnet-07dc9ba29299e98c3
 AWS_REGION := us-east-1
 PACKER_FILE := 
 
-EKS_BUILD_DATE := 2020-11-02
-EKS_119_VERSION := 1.19.6
+EKS_BUILD_DATE := 2022-03-09
+EKS_122_VERSION := 1.22.6
 
 build:
 	packer build \
@@ -17,5 +17,5 @@ build:
 
 # Ubuntu 20.04
 #-----------------------------------------------------
-build-ubuntu2004-1.19:
-	$(MAKE) build PACKER_FILE=amazon-eks-node-ubuntu2004.json eks_version=$(EKS_119_VERSION) eks_build_date=2021-01-05
+build-ubuntu2004-1.22:
+	$(MAKE) build PACKER_FILE=amazon-eks-node-ubuntu2004.json eks_version=$(EKS_122_VERSION) eks_build_date=2022-03-09
