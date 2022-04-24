@@ -25,6 +25,6 @@ managedNodeGroups:
     #   k8s.io/cluster-autoscaler/enabled: "true"
     #   k8s.io/cluster-autoscaler/custom-ami: "true"
     launchTemplate:
-      id: lt-04e94a42d9edcb7a6
+      id: lt-025be4a226f46f3d8
  
   
