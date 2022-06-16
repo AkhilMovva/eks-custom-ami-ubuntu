@@ -19,3 +19,5 @@ build:
 #-----------------------------------------------------
 build-ubuntu2004-1.22:
 	$(MAKE) build PACKER_FILE=amazon-eks-node-ubuntu2004.json eks_version=$(EKS_122_VERSION) eks_build_date=2022-03-09
+build-rhel8-1.22:
+	$(MAKE) build PACKER_FILE=amazon-eks-node-rhel8.json eks_version=$(EKS_122_VERSION) eks_build_date=2022-03-09
